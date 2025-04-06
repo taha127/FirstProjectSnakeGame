@@ -16,13 +16,11 @@ class Algorithm(ABC):
         return Node(snake.get_x(), snake.get_y()), Node(snake.get_fruit().x, snake.get_fruit().y)
 
     def manhattan_distance(self, nodeA, nodeB):
-        # your code ----------------------------------------------------------------------
-
-        return
+        distance = abs(nodeA.x - nodeB.x) + abs(nodeA.y - nodeB.y)
+        return distance
 
     def euclidean_distance(self, nodeA: Node, nodeB: Node):
         distance = math.sqrt((nodeA.x - nodeB.x) ** 2 + (nodeA.y - nodeB.y) ** 2)
-
         return distance
 
     @abstractmethod
