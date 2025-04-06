@@ -20,6 +20,16 @@ class BFS(Algorithm):
 
         # while we have states in open list
         while len(self.frontier) > 0:
-        # your code ----------------------------------------------------------------------
+            current_node = self.frontier.popleft()
 
-            return None
+            if current_node.equal(goalstate):
+                return self.get_path(current_node)
+
+            neighbors = self.get_neighbors(current_node)
+            for neighbor in neighbors:
+                if (neighbor not in self.explored_set and not self.inside_body(snake, neighbor)
+                        and not self.outside_boundary(neighbor)):
+                    neighbor.parent = current_node
+                    self.frontier.append(neighbor)
+                    self.explored_set.append(neighbor)
+        return None
