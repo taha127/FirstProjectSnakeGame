@@ -20,10 +20,10 @@ class Algorithm(ABC):
 
         return
 
-    def euclidean_distance(self, nodeA, nodeB):
-        # your code ----------------------------------------------------------------------
+    def euclidean_distance(self, nodeA: Node, nodeB: Node):
+        distance = math.sqrt((nodeA.x - nodeB.x) ** 2 + (nodeA.y - nodeB.y) ** 2)
 
-        return
+        return distance
 
     @abstractmethod
     def run_algorithm(self, snake):
